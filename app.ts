@@ -1,10 +1,31 @@
-//Tipos de variedades
-let a = 'a'
-const b = 'b'
+//Objetos e interfaces
 
-let x : string = 'x'
-let y : number = 8
-let bol : boolean = true
+interface Pessoa{
+    nome: string,
+    idade: number,
+    profissao?: string //propriedade opcional
+}
 
-let v: string | number | boolean
-let vr : any
+const pessoa: Pessoa ={
+    nome:'Alexandre',
+    idade: 28
+}
+
+const pessoa2: Pessoa ={
+    nome:'Luiza',
+    idade: 20,
+    profissao:'estudante' 
+}
+
+//Formas de declaração de array
+const arrayPessoa: Array<Pessoa> = [
+    pessoa,
+    pessoa2
+]
+
+const arrayNumber: number[] = [
+    1,2,3
+]
+const arrayString: Array<String> = [
+    'a','b','c'
+]
