@@ -1,31 +1,13 @@
-//Objetos e interfaces
+//Decissões e repetições
 
-interface Pessoa{
-    nome: string,
-    idade: number,
-    profissao?: string //propriedade opcional
+const num: number = 20
+
+if(num > 20){
+    console.log('Num maior que 20')
 }
-
-const pessoa: Pessoa ={
-    nome:'Alexandre',
-    idade: 28
+else if(num === 20){ //compara tipo e valor
+    console.log('Num é igual a 20')
 }
-
-const pessoa2: Pessoa ={
-    nome:'Luiza',
-    idade: 20,
-    profissao:'estudante' 
+else{
+    console.log('Num é menor que 20')
 }
-
-//Formas de declaração de array
-const arrayPessoa: Array<Pessoa> = [
-    pessoa,
-    pessoa2
-]
-
-const arrayNumber: number[] = [
-    1,2,3
-]
-const arrayString: Array<String> = [
-    'a','b','c'
-]
