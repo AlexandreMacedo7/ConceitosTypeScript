@@ -1,29 +1,12 @@
-//Decissões e repetições
+//for
 
-//const num: number = 20
-
-//if(num > 20){
-//    console.log('Num maior que 20')
-//}
-//else if(num === 20){ //compara tipo e valor
- //   console.log('Num é igual a 20')
-//}
-//else{
-//    console.log('Num é menor que 20')
-//}
-
-const typeUser = {
-    admin: 'Seja bem vindo admin',
-    student: 'Seja bem vindo estudante',
-    viewer: 'Seja bem vindo, você só pode vizualizar'
+for(let i = 0; i < 5; i+=2){
+    console.log(i)
 }
 
-function validateUser(user: string){
-    //A linha abaixo obtém o valor associado à chave `user` em `typeUser`
-    // `user as keyof typeof typeUser` assegura que `user` é uma chave válida em `typeUser`
-    console.log(typeUser[user as keyof typeof typeUser])
+//while
+let n  = 0
+while(n < 5){
+    console.log(n)
+    n++
 }
-
-const user = 'student'
-
-validateUser(user)
