@@ -3,13 +3,23 @@
 const array: Array<number> = [1,2,3,4,5]
 const arrayString: string[] = ['a','b','c','d']
 
-console.log(array[0])
-console.log(arrayString.length)
+const buscarNum = array.find(num => num === 4)
+//const buscarNum = array.find(num => num > 2) - retorna o primeiro elemento que seja maior que 2
 
-console.log('Array original', array)
-array.push(7)
-console.log("Modificado ", array)
+console.log(buscarNum)
 
-array.pop()//remoção
 
-console.log("Utilizado pop - Array ", array)
+//Array Foreach
+
+array.forEach(num => console.log(num))
+
+array.forEach(num => {
+    if(num > 2 && num % 2 === 0 ){
+        console.log('resultado = ', num * 2)
+    }
+}
+)
+
+//array map - mais performatico
+
+array.map(num => console.log(num))
