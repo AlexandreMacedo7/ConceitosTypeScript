@@ -1,25 +1,21 @@
-//Array
+class Account{
 
-const array: Array<number> = [1,2,3,4,5]
-const arrayString: string[] = ['a','b','c','d']
+    name: string
+    accountNumber: number
 
-const buscarNum = array.find(num => num === 4)
-//const buscarNum = array.find(num => num > 2) - retorna o primeiro elemento que seja maior que 2
+    constructor(name: string, accountNumber: number){
+        this.name = name
+        this.accountNumber = accountNumber
+    }
 
-console.log(buscarNum)
+    deposit = () => {
+        console.log('Você fez um deposito')
+    }
 
-
-//Array Foreach
-
-array.forEach(num => console.log(num))
-
-array.forEach(num => {
-    if(num > 2 && num % 2 === 0 ){
-        console.log('resultado = ', num * 2)
+    whitdraw = () =>{
+        console.log('Você fez um saque')
     }
 }
-)
 
-//array map - mais performatico
-
-array.map(num => console.log(num))
+const account: Account = new Account('Alexandre',7)
+console.log(account)
