@@ -1,8 +1,9 @@
 export abstract class Account{
 
-    name: string
-    accountNumber: number
-    balance: number = 0
+    private name: string
+    private accountNumber: number
+    private balance: number = 0
+    private statusAccount = true
 
     constructor(name: string, accountNumber: number){
         this.name = name
@@ -10,14 +11,25 @@ export abstract class Account{
     }
 
     deposit = (): void => {
+        if(this.validadeStatus()){
         console.log('Você fez um deposito')
+        }
     }
 
     whitdraw = (): void =>{
-        console.log('Você fez um saque')
-    }
+        if(this.validadeStatus()){
+            console.log('Você fez um saque')
+        }
+    }    
 
     getBalance = (): void =>{
         console.log(this.balance)
+    }
+
+    private validadeStatus = (): boolean => {
+        if(this.statusAccount){
+            return this.statusAccount
+        }
+        throw new Error('Conta inválida')
     }
 }
