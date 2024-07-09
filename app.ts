@@ -1,9 +1,10 @@
-//Herança
+//Classe abstrata
 
-class Account{
+abstract class Account{
 
     name: string
     accountNumber: number
+    balance: number = 0
 
     constructor(name: string, accountNumber: number){
         this.name = name
@@ -17,19 +18,20 @@ class Account{
     whitdraw = () =>{
         console.log('Você fez um saque')
     }
-}
 
-const account: Account = new Account('Alexandre',7)
-console.log(account)
-
-class Admin extends Account{
-    balance: number
-    
-    constructor(name: string, accountNumber: number){
-        super(name, accountNumber)
-        this.balance = 20
+    getBalance = () =>{
+        console.log(this.balance)
     }
 }
 
-const adminAccount: Admin = new Admin('Alexandre', 1)
-console.log(adminAccount)
+class PeopleAccount extends Account{
+    doc_id : number
+
+    constructor(doc_id: number, name: string, accountNumber: number){
+        super(name, accountNumber)
+        this.doc_id = doc_id
+    }
+}
+
+const account: PeopleAccount = new PeopleAccount(1,'Alexandre',7)
+console.log(account)
