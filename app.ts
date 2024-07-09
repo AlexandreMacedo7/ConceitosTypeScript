@@ -1,3 +1,5 @@
+//Herança
+
 class Account{
 
     name: string
@@ -19,3 +21,15 @@ class Account{
 
 const account: Account = new Account('Alexandre',7)
 console.log(account)
+
+class Admin extends Account{
+    balance: number
+    
+    constructor(name: string, accountNumber: number){
+        super(name, accountNumber)
+        this.balance = 20
+    }
+}
+
+const adminAccount: Admin = new Admin('Alexandre', 1)
+console.log(adminAccount)
