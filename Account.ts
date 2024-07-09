@@ -9,15 +9,15 @@ export abstract class Account{
         this.accountNumber = accountNumber
     }
 
-    deposit = () => {
+    deposit = (): void => {
         console.log('Você fez um deposito')
     }
 
-    whitdraw = () =>{
+    whitdraw = (): void =>{
         console.log('Você fez um saque')
     }
 
-    getBalance = () =>{
+    getBalance = (): void =>{
         console.log(this.balance)
     }
 }

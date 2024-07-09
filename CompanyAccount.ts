@@ -7,6 +7,9 @@ export class CompanyAccount extends Account{
     }
 
     getLoan = () => {
-        console.log("Você fez um empréstimo")
+        console.log('Você fez um empréstimo')
+    }
+    deposit = (): void => {
+        console.log('A empresa fez um deposito ')
     }
 }
