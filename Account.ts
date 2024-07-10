@@ -1,7 +1,7 @@
 export abstract class Account{
 
     private name: string
-    private accountNumber: number
+    private readonly accountNumber: number //apenas leitura
     private balance: number = 0
     private statusAccount = true
 
