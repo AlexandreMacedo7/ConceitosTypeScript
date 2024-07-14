@@ -24,11 +24,14 @@ export abstract class Account{
         }
     }    
 
-    getBalance = (): void =>{
-        console.log(this.balance)
+    getBalance = (): number =>{
+        return this.balance
+    }
+    setBalance = (amount: number): void =>{
+        this.balance = amount
     }
 
-    private validadeStatus = (): boolean => {
+    protected validadeStatus = (): boolean => {
         if(this.statusAccount){
             return this.statusAccount
         }
