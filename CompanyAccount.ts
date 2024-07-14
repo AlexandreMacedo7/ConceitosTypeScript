@@ -6,10 +6,9 @@ export class CompanyAccount extends Account{
         super(name, accountNumber)
     }
 
-    getLoan = () => {
-        console.log('Você fez um empréstimo')
-    }
-    deposit = (): void => {
-        console.log('A empresa fez um deposito ')
+    getLoan = (amount: number): void =>{
+        if(this.validadeStatus())
+            this.setBalance(amount + this.getBalance())
+        console.log('Você fez um empréstimo de: R$', amount, 'Seu saldo atual é de: R$', this.getBalance())
     }
 }
