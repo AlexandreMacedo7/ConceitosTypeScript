@@ -10,15 +10,17 @@ export abstract class Account{
         this.accountNumber = accountNumber
     }
 
-    deposit = (): void => {
+    deposit = (amount : number): void => {
         if(this.validadeStatus()){
-        console.log('Você fez um deposito')
+            this.balance =+ amount
+        console.log('Você fez um deposito de: R$', amount,'- seu saldo atual é de: R$', this.balance)
         }
     }
 
-    whitdraw = (): void =>{
-        if(this.validadeStatus()){
-            console.log('Você fez um saque')
+    whitdraw = (amount: number): void =>{
+        if(this.validadeStatus() && this.validadeBalance(amount)){
+            this.balance = this.balance - amount
+            console.log('Você fez um saque de: R$', amount, '- seu saldo atual é de: R$ ', this.balance)
         }
     }    
 
@@ -31,5 +33,12 @@ export abstract class Account{
             return this.statusAccount
         }
         throw new Error('Conta inválida')
+    }
+
+    private validadeBalance = (amount : number): boolean =>{
+        if(this.balance >= amount){
+            return true
+        }
+        throw new Error('Saldo insuficiente')
     }
 }
